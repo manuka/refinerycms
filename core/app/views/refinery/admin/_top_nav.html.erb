@@ -1,0 +1,14 @@
+<nav class="navbar navbar-full navbar-dark bg-inverse">
+  <div class="pull-xs-right">
+    <% if content_for?(:custom_sidebar_header_link) %>
+      <%= yield :custom_sidebar_header_link %>
+    <% else %>
+      <i class="icon icon-bars"></i> <%= link_to Refinery::Core.site_name, '/', :class => 'ellipsis' %>
+    <% end %>
+
+    <%= link_to Refinery::Core.refinery_logout_path, id:'logout', class: 'btn btn-primary' do %>
+      Logout
+      <!-- <%= t('.log_out', site_bar_translate_locale_args) %> -->
+    <% end %>
+  </div>
+</nav>

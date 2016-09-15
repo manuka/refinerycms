@@ -1,0 +1,4 @@
+<nav class="nav nav-pills nav-stacked">
+  <%= render partial: "refinery/admin/menu_item",
+             collection: current_refinery_user.active_plugins.in_menu -%>
+</nav>

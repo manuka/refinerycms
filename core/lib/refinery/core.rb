@@ -3,7 +3,6 @@ require 'truncate_html'
 require 'will_paginate'
 require 'refinery/i18n'
 require 'zilch/authorisation'
-require 'bootstrap'
 
 module Refinery
   module Core
@@ -22,7 +21,3 @@ end
 # this require has to be down here
 # see https://github.com/refinery/refinerycms/issues/2273
 require 'decorators'
-require 'jquery-rails'
-require 'jquery-ui-rails'
-require 'sass-rails'
-require 'coffee-rails'

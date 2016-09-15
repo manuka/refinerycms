@@ -13,12 +13,15 @@ gem 'quiet_assets'
 gem 'spring'
 gem 'spring-commands-rspec'
 gem 'poltergeist', '>= 1.8.1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 # Add support for refinerycms-acts-as-indexed
 gem 'refinerycms-acts-as-indexed', ['~> 3.0', '>= 3.0.0']
 
+gem "refinerycms-theme", git: "https://github.com/manuka/refinerycms-theme", branch: "master"
+
 # Add the default visual editor, for now.
-gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
+# gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
 
 # Database Configuration
 unless ENV['TRAVIS']

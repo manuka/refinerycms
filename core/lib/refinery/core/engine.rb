@@ -82,18 +82,13 @@ module Refinery
 
         # scripts
         Rails.application.config.assets.precompile += %w(
-          refinery/*.js
-          refinery/icons/*
+          refinery/wymeditor.js
           modernizr-min.js
           admin.js
         )
 
         # stylesheets
         Rails.application.config.assets.precompile += %w(
-          refinery/refinery.css
-          refinery/formatting.css
-          refinery/site_bar.css
-          refinery/theme.css
         )
 
         # images
@@ -104,11 +99,6 @@ module Refinery
 
         # fonts
         Rails.application.config.assets.precompile += %w(
-          font-awesome/fontawesome-webfont.eot
-          font-awesome/fontawesome-webfont.woff2
-          font-awesome/fontawesome-webfont.woff
-          font-awesome/fontawesome-webfont.ttf
-          font-awesome/fontawesome-webfont.svg
         )
       end
 
