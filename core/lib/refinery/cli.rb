@@ -38,16 +38,6 @@ module Refinery
         :dir => 'presenters',
         :desc => 'presenter',
       },
-      :javascript => {
-        :glob => '*.js{,.*}',
-        :dir => 'assets/javascripts',
-        :desc => 'javascript',
-      },
-      :stylesheet => {
-        :glob => '*.{s,}css',
-        :dir => 'assets/stylesheets',
-        :desc => 'stylesheet',
-      },
     }
 
     desc "override", "copies files from any Refinery extension that you are using into your application"
@@ -168,8 +158,6 @@ module Refinery
     def input_examples
       {
         :view => ['pages/home', 'refinery/pages/home', 'layouts/application'],
-        :javascript => %w(admin refinery/site_bar refinery**/{**/}*),
-        :stylesheet => %w(home refinery/site_bar),
         :controller => %w(pages),
         :model => %w(page refinery/page),
         :helper => %w(site_bar refinery/site_bar_helper),

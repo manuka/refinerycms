@@ -22,15 +22,6 @@ describe "CLI" do
       expect(msg).to include("view=refinery/pages/home")
       expect(msg).to include("view=layouts/application")
 
-      expect(msg).to include("type=javascript")
-      expect(msg).to include("javascript=admin")
-      expect(msg).to include("javascript=refinery/site_bar")
-      expect(msg).to include("javascript=refinery**/{**/}*")
-
-      expect(msg).to include("type=stylesheet")
-      expect(msg).to include("stylesheet=home")
-      expect(msg).to include("stylesheet=refinery/site_bar")
-
       expect(msg).to include("type=controller")
       expect(msg).to include("controller=pages")
 
@@ -55,10 +46,6 @@ describe "CLI" do
       expect(msg).to include("rake refinery:override view=pages/home")
       expect(msg).to include("rake refinery:override view=refinery/pages/home")
       expect(msg).to include("rake refinery:override view=layouts/application")
-      expect(msg).to include("rake refinery:override javascript=admin")
-      expect(msg).to include("rake refinery:override javascript=refinery/site_bar")
-      expect(msg).to include("rake refinery:override stylesheet=home")
-      expect(msg).to include("rake refinery:override stylesheet=refinery/site_bar")
       expect(msg).to include("rake refinery:override controller=pages")
       expect(msg).to include("rake refinery:override model=page")
       expect(msg).to include("rake refinery:override model=refinery/page")
@@ -144,28 +131,6 @@ describe "CLI" do
       let!(:file_location) { File.expand_path("../../../../app/helpers/refinery", __FILE__) }
       let(:env_file_location) { "refinery/#{file_name.sub(%r{\..+}, "")}" }
       let(:copied_file_location) { "app/helpers/refinery/#{file_name}" }
-    end
-  end
-
-  describe "overriding javascripts" do
-    it_behaves_like "refinery:override" do
-      let(:env) { "javascript" }
-      let(:not_found_message) { "Couldn't match any javascript files in any extensions like non-existent\n" }
-      let(:spec_success_message) { %W(create app/assets/javascripts/refinery/#{file_name}) }
-      let!(:file_location) { File.expand_path("../../../../app/assets/javascripts/refinery", __FILE__) }
-      let(:env_file_location) { "refinery/#{file_name.sub(%r{\..+}, "")}" }
-      let(:copied_file_location) { "app/assets/javascripts/refinery/#{file_name}" }
-    end
-  end
-
-  describe "overriding stylesheets" do
-    it_behaves_like "refinery:override" do
-      let(:env) { "stylesheet" }
-      let(:not_found_message) { "Couldn't match any stylesheet files in any extensions like non-existent\n" }
-      let(:spec_success_message) { %W(create app/assets/stylesheets/refinery/#{file_name}) }
-      let!(:file_location) { File.expand_path("../../../../app/assets/stylesheets/refinery", __FILE__) }
-      let(:env_file_location) { "refinery/#{file_name.sub(%r{\..+}, "")}" }
-      let(:copied_file_location) { "app/assets/stylesheets/refinery/#{file_name}" }
     end
   end
 
